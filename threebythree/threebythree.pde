@@ -1,10 +1,12 @@
 //Global Variables
-color black=#000000, yellow=#F7FF1C, green=#ACFC00, resetButtonColour=#FFFFFF, buttonFill;
+color black=#000000, yellow=#F7FF1C, green=#ACFC00,red=#B80E14, resetButtonColour=#FFFFFF, buttonFill;
 PImage pic1, pic2, pic3, pic4, pic5, pic6;
 Boolean imageON=false, showimage=false, showimage2=false, showimage3=false, showimage4=false, showimage5=false, showimage6=false, showtext2=false, showtext8=false, showtext6=false;
 String textrect2 = "Love, it sustains you. It is like oatmeal. - Raymond Holt, 'Brooklyn Nine-Nine'";
 String textrect8 = " I just negotiated my baby girls down from a pony to a hamster. Little fools.- Sergeant Terry Jeffords, 'Brooklyn Nine-Nine'.";
-String textrect6 = "X";
+String textrect3 = "X";
+String Button = "Click";
+String QuitButton= "Don't Click";
 PFont textFont;
 //
 void setup() 
@@ -16,14 +18,12 @@ void setup()
   //String[] fontList = PFont.list(); //To list all fonts available on system
   println("Start of Console");
   //printArray(fontList); //For listing all possible fonts to choose, then createFont
-  textFont = createFont ("Calibri-LightItalic", 55); //Must also Tools / Create Font / Find Font / Do Not Press "OK"
+  textFont = createFont ("Harrington", 55); //Must also Tools / Create Font / Find Font / Do Not Press "OK"
   //
 }//End setup
 //
 void draw () 
 { 
-  
-  
   
   
   //RECT ONE
@@ -60,14 +60,14 @@ void draw ()
   rect(xrect3, yrect3, rectWidth, rectHeight) ;// rect 3
    fill(resetButtonColour);  
   //Hover-over
-if (mouseX>xquitbutton3 && mouseX<xquitbutton3+quitbuttonWidth3 && mouseY>yquitbutton3&& mouseY<yquitbutton3+quitbuttonHeight3) {
-    buttonFill = black;
-  } else {
-    buttonFill = yellow;
-  }//End Hover-Over
-  fill(buttonFill);
-  rect (xquitbutton3, yquitbutton3, quitbuttonWidth3, quitbuttonHeight3);
-  fill(resetButtonColour);  
+//if (mouseX>xquitbutton3 && mouseX<xquitbutton3+quitbuttonWidth3 && mouseY>yquitbutton3&& mouseY<yquitbutton3+quitbuttonHeight3) {
+   // buttonFill = black;
+ // } else {
+   // buttonFill = yellow;
+ // }//End Hover-Over
+  //fill(buttonFill);
+  //rect (xquitbutton3, yquitbutton3, quitbuttonWidth3, quitbuttonHeight3);
+  //fill(resetButtonColour);  
    
    //PROJECTION
   if ( showimage2 == true)image(pic2, xrect3, yrect3, picWidthAdjusted1, picHeightAdjusted1);
@@ -99,7 +99,6 @@ if (mouseX>xquitbutton3 && mouseX<xquitbutton3+quitbuttonWidth3 && mouseY>yquitb
   
   
   //PROJECTION
-  if ( showtext6 == true)text(textrect6, xquitbutton3, yquitbutton3, quitbuttonWidth3, quitbuttonHeight3);
   //END PROJECTION
   
   //END RECT FIVE
@@ -266,7 +265,7 @@ if (mouseX>xquitbutton3 && mouseX<xquitbutton3+quitbuttonWidth3 && mouseY>yquitb
   //END BUTTON EIGHT
   //
   //BUTTON NINE
-  rect(xbutton9, ybutton9, buttonWidth, buttonHeight); //button 9
+  rect(xbutton9, ybutton9, buttonWidth, buttonHeight);//button 9
   if (mouseX>xbutton9 && mouseX<xbutton9+buttonWidth && mouseY>ybutton9&& mouseY<ybutton9+buttonHeight) {
     buttonFill = black;
   } else {
@@ -277,6 +276,19 @@ if (mouseX>xquitbutton3 && mouseX<xquitbutton3+quitbuttonWidth3 && mouseY>yquitb
   fill(resetButtonColour);
   //END BUTTON NINE
   
+  fill(red);
+  textAlign (CENTER, CENTER);
+  //text(textrect3, xquitbutton3, yquitbutton3, quitbuttonWidth3, quitbuttonHeight3);
+  text(Button, xbutton1, ybutton1, buttonWidth, buttonHeight);
+  text(Button, xbutton2, ybutton2, buttonWidth, buttonHeight);
+  text(Button, xbutton3, ybutton3, buttonWidth, buttonHeight);
+  text(Button, xbutton4, ybutton4, buttonWidth, buttonHeight);
+  text(QuitButton, xbutton5, ybutton5, buttonWidth, buttonHeight);
+  text(Button, xbutton6, ybutton6, buttonWidth, buttonHeight);
+  text(Button, xbutton7, ybutton7, buttonWidth, buttonHeight);
+  text(Button, xbutton8, ybutton8, buttonWidth, buttonHeight);
+  text(Button, xbutton9, ybutton9, buttonWidth, buttonHeight);
+  textFont(textFont, 15);
   
   
   
@@ -313,7 +325,7 @@ void mousePressed ()
    
    
    
-   if (mouseX>xquitbutton3 && mouseX<xquitbutton3+quitbuttonWidth3 && mouseY>yquitbutton3&& mouseY<yquitbutton3+quitbuttonHeight3) exit();
+   if (mouseX>xbutton5 && mouseX<xbutton5+buttonWidth && mouseY>ybutton5&& mouseY<ybutton5+buttonHeight) exit();
 }//End mousePressed
 //
 //End MAIN Program
